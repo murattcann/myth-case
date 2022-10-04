@@ -1,12 +1,10 @@
 <h2>Case Project</h2>
 
 <ul>
-    <li>
-        <a href="#summary">Summary</a>
-        <a href="#reqs">Requirements</a>
-        <a href="#installation">Installation</a>
-        <a href="#tests">Running Test</a>
-    </li>
+    <li><a href="#summary">Summary</a></li>
+    <li><a href="#reqs">Requirements</a></li>
+    <li><a href="#installation">Installation</a></li>
+    <li><a href="#tests">Running Test</a></li>
 </ul>
 <br>
 <div id="summary">
