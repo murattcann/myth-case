@@ -1,12 +1,18 @@
 <h2>Case Project</h2>
 
 <ul>
+    <li><a href="#installation">Installation</a></li>
     <li><a href="#summary">Summary</a></li>
     <li><a href="#reqs">Requirements</a></li>
-    <li><a href="#installation">Installation</a></li>
     <li><a href="#tests">Running Test</a></li>
 </ul>
 <br>
+<div id="installation">
+    <h4>Installation</h4>
+    <p>You can run <code>php /bin/console app:install</code> to start installation process and you must answer the questions in opened terminal screen.</p>
+    <img src="./qsts.png" style="width=100%; max-height:250px"/>
+    <p>If you have "make tool" to run Makefile file, you can run <code>make app-install</code> instead of above command.</p>
+</div>
 <div id="summary">
     <p>To get products collection after installation step, visit: http:/127.0.0.1:8000/products</p>
     <p>
@@ -55,12 +61,7 @@
         <li> Make Tool ( Optional )</li>
     </ul>
 </div>
-<div id="installation">
-    <h4>Installation</h4>
-    <p>You can run <code>php /bin/console app:install</code> to start installation process and you must answer the questions in opened terminal screen.</p>
-    <img src="./qsts.png" style="width=100%; max-height:250px"/>
-    <p>If you have "make tool" to run Makefile file, you can run <code>make app-install</code> instead of above command.</p>
-</div>
+
 
 <div id="tests">
     <h4>Running Tests</h4>
