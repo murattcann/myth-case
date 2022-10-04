@@ -1,12 +1,21 @@
 <h2>Case Project</h2>
 
 <ul>
+    <li><a href="#reqs">Requirements</a></li>
     <li><a href="#installation">Installation</a></li>
     <li><a href="#summary">Summary</a></li>
-    <li><a href="#reqs">Requirements</a></li>
     <li><a href="#tests">Running Test</a></li>
 </ul>
 <br>
+<div id="reqs">
+    <h4>Requirements</h4>
+    <ul>
+        <li>PHP >= 8.1 </li>
+        <li>Local Development Server</li>
+        <li>Symfony CLI </li>
+        <li> Make Tool ( Optional )</li>
+    </ul>
+</div>
 <div id="installation">
     <h4>Installation</h4>
     <p>You can run <code>php /bin/console app:install</code> to start installation process and you must answer the questions in opened terminal screen.</p>
@@ -52,17 +61,6 @@
         </p>
     </p>
 </div>
-<div id="reqs">
-    <h4>Requirements</h4>
-    <ul>
-        <li>PHP >= 8.1 </li>
-        <li>Local Development Server</li>
-        <li>Symfony CLI </li>
-        <li> Make Tool ( Optional )</li>
-    </ul>
-</div>
-
-
 <div id="tests">
     <h4>Running Tests</h4>
     <code>php bin/phpunit</code>
