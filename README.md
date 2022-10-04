@@ -55,7 +55,6 @@
         <li> Make Tool ( Optional )</li>
     </ul>
 </div>
-
 <div id="installation">
     <h4>Installation</h4>
     <p>You can run <code>php /bin/console app:install</code> to start installation process and you must answer the questions in opened terminal screen.</p>
@@ -64,5 +63,6 @@
 </div>
 
 <div id="tests">
+    <h4>Running Tests</h4>
     <code>php bin/phpunit</code>
 </div>
