@@ -20,7 +20,7 @@
     <h4>Installation</h4>
     <p>You can run <code>php /bin/console app:install</code> to start installation process and you must answer the questions in opened terminal screen.</p>
     <img src="./qsts.png" style="width=100%; max-height:250px"/>
-    <p>If you have "make tool" to run Makefile file, you can run <code>make app-install</code> instead of above command.</p>
+    <p>If you have "make tool" to run Makefile file, you can run <code>make install-app</code> instead of above command.</p>
 </div>
 <div id="summary">
     <p>To get products collection after installation step, visit: http:/127.0.0.1:8000/products</p>
