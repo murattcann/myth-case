@@ -10,7 +10,6 @@
 <div id="summary">
     <p>To get products collection after installation step, visit: http:/127.0.0.1:8000/products</p>
     <p>
-    
         <h4>What we expect: </h4>
          <p>
             You must take into account that this list could grow to have 20.000 products.
