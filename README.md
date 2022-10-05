@@ -13,7 +13,7 @@
         <li>PHP >= 8.1 </li>
         <li>Local Development Server</li>
         <li>Symfony CLI </li>
-        <li> Make Tool ( Optional - Nice To Have )</li>
+        <li> Make Tool ( Optional - Nice To Have ) (Install: <code>sudo apt-get install make </code>)</li>
     </ul>
 </div>
 <div id="installation">
@@ -22,8 +22,13 @@
         <b>Important: </b> 
         To get products collection after installation step, visit: <code>http:/127.0.0.1:8000/products</code>
     </p>
-    <p>If you have "make tool" to run Makefile file, you can run <code>make install-app</code> instead of above command.</p>
-    <p>If you don't have make tool, you can run <code>composer require symfony/runtime && php /bin/console app:install</code> to start installation process and you must answer the questions in opened terminal screen.</p>
+    <p>If you have "make tool" to run Makefile file, you can run <code>make install-app</code></p>
+    <p>If you don't have make tool, you can run: </p> 
+    <ul>
+        <li><code>composer require symfony/runtime</code></li>
+        <li><code>php /bin/console app:install</code></li>
+    </ul>
+    <p>to start installation process and you must answer the questions in opened terminal screen.</p>
     <img src="./qsts.png" style="width=100%; max-height:250px"/>
 </div>
 <div id="summary">
