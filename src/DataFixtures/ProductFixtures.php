@@ -19,19 +19,16 @@ class ProductFixtures extends Fixture
     {
         $projectRoot = $this->kernel->getProjectDir();
         $productsArray = json_decode(file_get_contents($projectRoot. "/products.json"), true);
-        
-        $batchSize=5;
-        $i = 1;
+         
         foreach($productsArray as $item){
-            $i++;
+          
             $product = new Product();
-            $product = $product->setSku("asd")
+            $product = $product->setSku($item["sku"])
             ->setName($item["name"])
             ->setCategory($item["category"])
             ->setPrice($item["price"]);
               
-            $manager->getRepository(Product::class)->save($product, true);
-             
+            $manager->getRepository(Product::class)->save($product, true);    
         }
  
         /* $product = new Product();

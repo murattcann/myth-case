@@ -1,13 +1,9 @@
 <?php
 
 namespace App\Command;
-
-use App\Entity\Product;
-use App\Repository\ProductRepository;
-use Doctrine\DBAL\Connection;
-use Doctrine\ORM\EntityManagerInterface;
-use Symfony\Component\Process\Process;
-use Symfony\Component\Filesystem\Filesystem;
+ 
+use Doctrine\DBAL\Connection; 
+use Symfony\Component\Process\Process; 
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Question\Question;
@@ -16,13 +12,12 @@ use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Helper\ProgressBar;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\Console\Output\OutputInterface; 
 use Symfony\Component\HttpKernel\KernelInterface;
 
 #[AsCommand(
     name: 'app:install',
-    description: 'Add a short description for your command',
+    description: 'This command installs project',
 )]
 class InstallCommand extends Command
 {
@@ -48,28 +43,21 @@ class InstallCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
-
-        
-       
         $io = new SymfonyStyle($input, $output);
+        $helper = $this->getHelper("question");
     
         $io->writeln('');
-        $this->installComposer();
+        //$this->installComposer();
         $io->writeln('');    
 
         $io->info("==== Please answer below questions with your system credentials ==== ");
         
-        $helper = $this->getHelper("question");
 
         $this->setEnv($helper, $input, $output);
         $this->setProgressBar($io, $output);
-        sleep(2);
         $this->createDb();
-        sleep(2);
-        $this->setProductTable();
-        sleep(2);
         $this->startServerAndOpenBrowser($io);
-       
+        
         return Command::SUCCESS;
     }
 
@@ -79,6 +67,9 @@ class InstallCommand extends Command
 
         $migrateTable = new Process(['php' , 'bin/console', 'doctrine:migrations:migrate']);
         $migrateTable->run();
+
+       /*  $loadFixtures = new Process(['php' , 'bin/console', 'doctrine:fixtures:load']);
+        $loadFixtures->run(); */
     }
 
     private function startServerAndOpenBrowser($io){
@@ -86,7 +77,7 @@ class InstallCommand extends Command
         $openBrowser = new Process(['symfony','open:local']);
         $startServer->setWorkingDirectory($this->projectRoot);
         $startServer->run();
-        $io->success("IMPORTANT: To get API product list visit: http://127.0.0.1:8000/api/v1/products");
+        $io->success("IMPORTANT: To get API product list visit: http://127.0.0.1:8000/products");
         $io->success("** Your development server started: http://127.0.0.1:8000 and opening in browser. ");
         sleep(2);
         $openBrowser->run(); 
@@ -108,7 +99,7 @@ class InstallCommand extends Command
         $io->writeln('');
     }
 
-    public function setEnv($helper, $input, $output){
+    private function setEnv($helper, $input, $output){
         $question1 = new Question("Database Name ". ("[mytheresa_muratcan]: "), 'mytheresa_muratcan');
         $question2 = new Question("Database User ". ("[root]: "), 'root');
         $question3 = new Question("Database Password ". ("[empty]: "), '');
@@ -142,11 +133,10 @@ class InstallCommand extends Command
         }
     }
 
-    public function installComposer(){ 
+    private function installComposer(){ 
         $install = new Process(['composer','install']);
         $install->run(function($type, $buffer){
             echo $buffer;
         }); 
- 
     }
 }

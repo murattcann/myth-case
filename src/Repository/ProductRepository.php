@@ -59,30 +59,9 @@ class ProductRepository extends ServiceEntityRepository
         $products = $queryBuilder->getQuery()
         ->setFirstResult($limit * (  $page-1))
         ->setMaxResults($limit)->getResult(); 
+
         return $products;
-        /* $result = $queryBuilder->select("*")->from(Product::class, "product")->where("category=:categoryName")->setParameter("categoryName", "boots")->getQuery()->getResult();
-        dd(1,$result); */
-    }
-
-    public function bulkAddition(array $products){
-      
-        foreach($products as $key=>$product){
-             $entity = new Product;
-           
-             $entity->setName($product["name"]);
-             $entity->setSku(str_replace('0','', $product["sku"]));
-             $entity->setCategory($product["category"]);
-             $entity->setPrice($product["price"]);
-             $this->getEntityManager()->persist($entity);
-
-             if (($key % 5) == 0) {
-                $this->getEntityManager()->flush();
-                $this->getEntityManager()->clear();
-           }
-        }
-       
-        
-        $this->getEntityManager()->flush();
+         
     }
 //    /**
 //     * @return Product[] Returns an array of Product objects

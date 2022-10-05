@@ -11,7 +11,6 @@ use Doctrine\ORM\Mapping as ORM;
 class Product
 {
     #[ORM\Id]
-    #[ORM\GeneratedValue]
   
     #[ORM\Column(length: 255)]
     private ?string $sku = null;
