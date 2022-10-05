@@ -19,8 +19,7 @@
 <div id="installation">
     <h4>Installation</h4>
     <p>
-        <b>Important: </b> 
-        To get products collection after installation step, visit: <code>http:/127.0.0.1:8000/products</code>
+        <b>Important: </b> After installation application page will be opened in your browser automatically. If it won't be opened, visit: <code>http:/127.0.0.1:8000/products</code>
     </p>
     <p>If you have "make tool" to run Makefile file, you can run <code>make install-app</code></p>
     <p>If you don't have make tool, you can run: </p> 
